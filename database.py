@@ -1,6 +1,3 @@
-from email.policy import default
-from click import echo
-from cv2 import magnitude
 from sqlalchemy.engine import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float, DateTime
@@ -24,7 +21,6 @@ class Product(Base):
     detail = Column(String, default='')
     mfg = Column(DateTime, default=datetime.now)
     added_on = Column(DateTime, default=datetime.now)
-
 
 engine = create_engine("sqlite:///school.sqlite",echo=True)
 Base.metadata.create_all(engine)
