@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         print(request.form)
-    return render_template('index.html')``
+    return render_template('index.html')
 
 @app.route('/about')
 def about():
