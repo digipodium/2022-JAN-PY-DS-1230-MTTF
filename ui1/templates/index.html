@@ -2,6 +2,58 @@
 
 
 {% block body %}
-    <h1>Home page</h1>
-{% endblock body %}
-    
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center p-3">
+                Quiz form : Add new question
+            </h3>
+            <form method="post" class="card" style="background-color: rgb(249, 249, 174);">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="question" class="form-label">Quiz Question</label>
+                        <input type="text" class="form-control" id="question" name="question">
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="op1" class="form-label">Option 1</label>
+                            <input type="text" class="form-control" id="op1" name="op1">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="op2" class="form-label">Option 2</label>
+                            <input type="text" class="form-control" id="op2" name="op2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="op3" class="form-label">Option 3</label>
+                            <input type="text" class="form-control" id="op3" name="op3">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="op4" class="form-label">Option 4</label>
+                            <input type="text" class="form-control" id="op4" name="op4">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ans" class="form-label">Answer</label>
+                        <input type="text" class="form-control" id="ans" name="ans">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Select a category</label>
+                        <select name="category" id="category" class="form-select">
+                            <option>Science</option>
+                            <option>Maths</option>
+                            <option>GK</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">Save Question</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
