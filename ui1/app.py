@@ -1,7 +1,15 @@
+from database import Question
+from sqlalchemy.engine import create_engine
+from sqlalchemy.orm import sessionmaker
 from flask import Flask, render_template, request, flash, redirect
 app = Flask(__name__)
 app.secret_key = 'thisisaverysecretkey'
 
+
+def opendb():
+    engine = create_engine("sqlite:///db.sqlite")
+    Session = sessionmaker(bind=engine)
+    return Session()
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -21,6 +29,11 @@ def index():
             return redirect('/')
         # more like this
         else:
+            db = opendb()
+            q = Question(title=question, op1=op1, op2=op2, op3=op3, op4=op4, ans=ans, category=category)
+            db.add(q)
+            db.commit()
+            db.close()
             flash('Question added successfully', 'success')
             return redirect('/')
 
