@@ -4,9 +4,6 @@ from sqlalchemy import Column, Integer, String, Float, DateTime
 from datetime import datetime
 
 Base = declarative_base()
-
-
-
 class Question(Base):
     __tablename__ = 'questions'
     id = Column(Integer, primary_key=True)

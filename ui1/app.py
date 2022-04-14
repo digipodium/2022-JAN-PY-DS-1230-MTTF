@@ -5,7 +5,6 @@ from flask import Flask, render_template, request, flash, redirect
 app = Flask(__name__)
 app.secret_key = 'thisisaverysecretkey'
 
-
 def opendb():
     engine = create_engine("sqlite:///db.sqlite")
     Session = sessionmaker(bind=engine)
